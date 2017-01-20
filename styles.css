@@ -1,0 +1,15 @@
+body {
+  background-color: #312c32;
+  color:#feffff;
+  text-align: center;
+}
+
+.books {
+  border: solid 1px #98dafc;
+  padding: 1rem;
+  max-width: 75%;
+  display: flex;
+}
+.title {
+  font-size: 1.4rem;
+}
