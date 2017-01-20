@@ -1,4 +1,4 @@
-angular.
+var app = angular.
 module('worldGuide', ['ngRoute'])
 .config( ($routeProvider) => {
     $routeProvider
@@ -7,22 +7,17 @@ module('worldGuide', ['ngRoute'])
       templateUrl: 'guides.html'
     })
 })
-.controller('bookCtrl',function ($scope, $http) {
+.controller('bookCtrl',function ($scope, $http, guideFactory) {
 
-  $scope.hello = "HELLOOWWWWWWWW"
-  // $scope.getThedata = factoryname.whatever
-  // .then($scope.data = stuff returned from factory)
-  $http
-    .get('/data/guides.json')
-    .then((response) => {
-      $scope.books = response.data.guides
-      console.log(response)
-      })
-    })
+  guideFactory.getThebooks()
+  .then((response) => {
+
+   return $scope.books = response
+  })
 
 
 
-
+})
 
 
 // Here's a list of some things to include in your app in the appropriate spots:
